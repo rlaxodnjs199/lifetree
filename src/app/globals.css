@@ -1,26 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranade:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    font-family: 'Ranade', sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-light);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ranade', sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  /* Colors */
+  --color-sage-green: #7BA05B;
+  --color-sage-green-dark: #66844C;
+  --color-pearl-aqua: #81D8D0;
+  --color-tea-green: #D0F0C0;
+  --color-cream: #FEFDFB;
+  --color-charcoal: #2D3436;
+  --color-gray: #636E72;
+
+  /* Design tokens */
+  --bg-primary: #0F414C;
+  --bg-primary-dark: var(--color-sage-green-dark);
+  --bg-accent: var(--color-pearl-aqua);
+  --bg-light-green: var(--color-tea-green);
+  --bg-light: var(--color-cream);
+  
+  --text-primary: var(--color-charcoal);
+  --text-secondary: var(--color-gray);
+  
+  /* Spacing */
+  --section-padding: 8rem;
+  --card-padding: 2rem;
+  
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  
+  /* Transitions */
+  --transition-base: 0.3s ease;
+}
+
+@layer components {
+  .section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--section-padding) 1.5rem;
+  }
+  
+  .btn-primary {
+    background: var(--bg-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-family: 'Ranade', sans-serif;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background: var(--bg-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--card-padding);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@utility fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@utility pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
 }
