@@ -22,7 +22,7 @@ export default function Navbar() {
     { label: 'About', href: '#about' },
     { label: 'Providers', href: '#providers' },
     { label: 'Services', href: '#services' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '#footer' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-[#4B4D39] py-1.5' 
+        ? 'bg-[#1d2415] py-1.5' 
         : 'bg-transparent backdrop-blur-xs py-0.5'
     }`}>
       <div className="section-container !py-1.5">
@@ -96,7 +96,7 @@ export default function Navbar() {
               </button>
             ))}
             <button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => scrollToSection('#footer')}
               className="btn-primary w-full"
             >
               Make Reservation

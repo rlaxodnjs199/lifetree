@@ -29,8 +29,7 @@ export default function Hero() {
           </div> */}
 
           {/* Main Headline */}
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium mb-8 leading-tight font-['Rufina']">
+          <h1 className="text-4xl tracking-tight md:text-6xl lg:text-7xl font-medium mb-8 leading-tight font-['Rufina']">
             Compassionate Care for<br />
             <span className="text-[#F9EEB0]">A Flourishing Life</span>
           </h1>

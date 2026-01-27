@@ -42,14 +42,18 @@ const providers = [
 
 export default function Providers() {
   return (
-    <section id="providers" className="section-container bg-[#4B4D39]">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#FEFBF6] mb-4 font-['Rufina']">
-         Our Providers 
-        </h2>
-      </div>
+    <section id="providers" className="bg-[#4B4D39]">
+      <div className="section-container">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FEFBF6] mb-4 font-['Rufina']">
+           Our Providers
+          </h2>
+          <p className="text-xl text-[#FEFBF6]/90 max-w-3xl mx-auto">
+            Expert practitioners specializing in traditional and modern therapies
+          </p>
+        </div>
 
-      <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-24">
         {providers.map((provider, index) => (
           <div key={index} className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Professional Photo */}
@@ -135,6 +139,7 @@ export default function Providers() {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

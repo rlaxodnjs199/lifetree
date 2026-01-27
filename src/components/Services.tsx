@@ -62,17 +62,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-container bg-[#F8F6EF]">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#250303] mb-4 font-['Rufina']">
-          Our Services
-        </h2>
-        <p className="text-xl text-[#250303] max-w-2xl mx-auto">
-          Comprehensive healing treatments tailored to your needs
-        </p>
-      </div>
+    <section id="services" className="bg-[#F8F6EF]">
+      <div className="section-container">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#250303] mb-4 font-['Rufina']">
+            Our Services
+          </h2>
+          <p className="text-xl text-[#250303] max-w-2xl mx-auto">
+            Comprehensive healing treatments tailored to your needs
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => {
           const IconComponent = service.icon;
           
@@ -95,6 +96,7 @@ export default function Services() {
             </div>
           );
         })}
+        </div>
       </div>
     </section>
   );
