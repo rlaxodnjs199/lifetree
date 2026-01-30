@@ -80,8 +80,8 @@ export default function Navbar() {
               className="h-8 w-auto object-contain"
             />
             <div className="ml-3">
-              <h1 className="text-lg font-bold text-white">LifeTree Clinic</h1>
-              <p className="text-xs text-white/80 -mt-1">Acupuncture & Herbal Medicine</p>
+              <h1 className="text-lg font-bold text-white text-left">LifeTree Clinic</h1>
+              <p className="text-xs text-white/80 -mt-1 text-left">Acupuncture & Herbal Medicine</p>
             </div>
           </button>
 
