@@ -45,7 +45,7 @@ export default function Footer() {
                 onClick={() => setIsReservationModalOpen(true)}
                 className="bg-[var(--bg-primary)] text-white px-8 py-3 rounded-lg font-bold hover:bg-[var(--bg-primary-dark)] transition-all duration-300 shadow-lg hover:shadow-xl mt-4"
               >
-                Make Reservation
+                Make Appointment
               </button>
             </div>
           </div>

@@ -37,7 +37,7 @@ const conditionsData = [
       'Endometriosis',
       'PCOS',
       'Menopausal Symptoms',
-      'Post-Partum Care',
+      'Postpartum Care',
       'Breastfeeding Support',
       'Irregular Periods',
       'Prolapse',

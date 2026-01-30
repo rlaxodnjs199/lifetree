@@ -36,7 +36,7 @@ const conditionsData = [
       'Endometriosis',
       'PCOS',
       'Menopausal Symptoms',
-      'Post-Partum Care',
+      'Postpartum Care',
       'Breastfeeding Support',
       'Irregular Periods',
       'Prolapse',
@@ -81,8 +81,9 @@ const conditionsData = [
       'Muscular Dystrophy',
       'Guillain Barre Syndrome',
       'Sjogren\'s Syndrome',
-      'Grave\'s Disease/Hashimotis',
-      'Hypothyroid',
+      'Grave\'s Disease',
+      'Hashimoto\'s Disease',
+      'Hypothyroidism',
       'Immunodeficiency Disorders'
     ]
   },

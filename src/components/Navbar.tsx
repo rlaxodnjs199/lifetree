@@ -101,9 +101,9 @@ export default function Navbar() {
           {/* Reservation Button */}
           <button
             onClick={() => setIsReservationModalOpen(true)}
-            className="hidden lg:block bg-[var(--bg-primary)] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
+            className="hidden lg:block bg-[var(--bg-primary)] text-white px-5 py-2 rounded-lg font-semibold text-md hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
           >
-            Make Reservation
+            Make Appointment
           </button>
 
           {/* Mobile Menu Button */}
@@ -135,7 +135,7 @@ export default function Navbar() {
               }}
               className="btn-primary w-full"
             >
-              Make Reservation
+              Make Appointment
             </button>
           </div>
         )}

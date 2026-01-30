@@ -6,15 +6,32 @@ const providers = [
     title: 'DAOM, Dipl.Ac., L.Ac.',
     image: '/kyu.jpg',
     description: [
-      "Accepts auto accidents, personal injuries, and worker's comp-related cases.",
-      "Specialties include pain management (chronic and acute), mental health, and general wellness maintenance.",
-      "Skilled in Juheng Acupuncture and Korean Medicine."
+      "Dr. Kyu Hong Tae is a licensed Doctor of Acupuncture and Oriental Medicine with advanced clinical training in Korean Medicine and Juheng Acupuncture.",
+      "He accepts auto accident, personal injury, and workers' compensation cases, and provides comprehensive, patient-centered care focused on both recovery and long-term wellness."
+    ],
+    expertise: [
+      {
+        title: "Pain Management",
+        items: ["Chronic pain, acute injuries, post-accident rehabilitation"]
+      },
+      {
+        title: "Mental & Emotional Health",
+        items: ["Stress, anxiety, sleep disorders, and mood balance"]
+      },
+      {
+        title: "General Wellness & Preventive Care",
+        items: ["Immune support, fatigue, digestive health, and overall vitality"]
+      },
+      {
+        title: "Juheng Acupuncture & Korean Medicine",
+        items: ["Specialized techniques for musculoskeletal and neurological conditions"]
+      }
     ],
     credentials: [
-      "Doctor and Master's degrees in Acupuncture and Oriental Medicine from American Academy of Acupuncture and Oriental Medicine (Roseville, Minnesota)",
-      "Licensed by Minnesota Board of Medical Practice",
-      "Nationally Board Certified by NCCAOM (National Certification Commission for Acupuncture and Oriental Medicine)",
-      "Certified by Institute of Juheng Acupuncture and Moxibustion (Seoul, South Korea)"
+      "Doctorate & Master's Degrees in Acupuncture and Oriental Medicine — American Academy of Acupuncture and Oriental Medicine (Roseville, Minnesota)",
+      "Licensed Acupuncturist — Minnesota Board of Medical Practice",
+      "National Board Certified — NCBAHM (National Certification Board for Acupuncture and Herbal Medicine)",
+      "Certified Practitioner — Institute of Juheng Acupuncture and Moxibustion (Seoul, South Korea)"
     ]
   },
   {
@@ -23,13 +40,13 @@ const providers = [
     image: '/ariel.png',
     description: [
       "Dr. Ariel specializes in acupuncture for physical medicine and rehabilitation, pain management, joint pain, musculoskeletal disorders/imbalances, neuropathy, back pain, sciatica, neck pain, migraines/headaches, stress and anxiety.",
-      "She also has experience and success treating a wide variety of health imbalances, including sleep disorders and digestive disorders."
+      "She also has experience and success treating a wide variety of health imbalances, including women's health, sleep disorders and digestive disorders."
     ],
     education: [
       "Doctor of Acupuncture and Chinese Medicine -Pacific College of Oriental Medicine, San Diego, California, 2020",
       "Master of Acupuncture and Oriental Medicine – World Medicine Institute, Honolulu, Hawaii, 2011",
       "Licensed Acupuncturist – Minnesota Board of Medical Practice",
-      "National Board Certification in Acupuncture – NCCAOM"
+      "National Board Certification in Acupuncture – NCBAHM"
     ],
     trainings: [
       "Advanced Acupuncture for Musculoskeletal Disorders",
@@ -84,17 +101,40 @@ export default function Providers() {
                     </p>
                   ))}
                 </div>
-                
-                {/* Credentials Section (Kyu) */}
-                {provider.credentials && (
+
+                {/* Areas of Expertise (Kyu) */}
+                {provider.expertise && (
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-[#FEFBF6]/20">
                       <h4 className="text-xl font-bold text-[#FEFBF6] mb-6">
-                        Credentials
+                        Areas of Expertise
+                      </h4>
+                      <div className="space-y-5">
+                        {provider.expertise.map((area, i) => (
+                          <div key={i}>
+                            <h5 className="text-lg font-semibold text-[#FEFBF6] mb-2">
+                              {area.title}
+                            </h5>
+                            {area.items.map((item, j) => (
+                              <p key={j} className="text-[#FEFBF6]/80 ml-4">
+                                {item}
+                              </p>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                )}
+
+                {/* Professional Credentials Section (Kyu) */}
+                {provider.credentials && (
+                    <div className="border border-[#FEFBF6]/30 rounded-xl p-8 mb-8">
+                      <h4 className="text-xl font-bold text-[#FEFBF6] mb-6 m-0">
+                        Professional Credentials
                       </h4>
                       <ul className="space-y-4 m-0 p-0 list-none">
                         {provider.credentials.map((cred, i) => (
                           <li key={i} className="flex items-start gap-3 text-[#FEFBF6]/90">
-                            <CheckCircleIcon size={24} weight="fill" className="text-[#FEFBF6] flex-shrink-0 mt-1" />
+                            <div className="w-2 h-2 rounded-full bg-[#FEFBF6] mt-2.5 flex-shrink-0" />
                             <span>{cred}</span>
                           </li>
                         ))}
