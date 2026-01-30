@@ -1,101 +1,124 @@
 'use client';
 
-const services = [
+import { useRouter } from 'next/navigation';
+
+const conditionsData = [
   {
-    icon: '/acupuncture.png',
-    title: 'Acupuncture',
-    description: 'Traditional needle therapy to restore balance and promote natural healing',
+    title: 'Pain Management',
+    image: '/pain_management.png',
+    conditions: [
+      'Acute Injuries',
+      'Chronic Pain',
+      'Neck & Back Pain',
+      'Headaches & Migraines',
+      'Muscular Tension',
+      'Tendonitis',
+      'Fibromyalgia',
+      'Joint Pain & Arthritis',
+      'Neuropathy & Nerve Pain',
+      'Plantar Fasciitis',
+      'Tennis & Golfer\'s Elbow',
+      'Frozen Shoulder',
+      'Carpal & Tarsal Tunnel',
+      'Trigeminal Neuralgia',
+      'TMJ',
+      'Shingles'
+    ]
   },
   {
-    icon: '/massage.png',
-    title: 'Manual Therapy',
-    description: 'Hands-on techniques to relieve pain and improve mobility',
+    title: 'Women\'s Health',
+    image: '/women_health.png',
+    conditions: [
+      'Fertility',
+      'Pregnancy Symptoms',
+      'Morning Sickness',
+      'PMS',
+      'Menstrual Pain',
+      'Endometriosis',
+      'PCOS',
+      'Menopausal Symptoms',
+      'Post-Partum Care',
+      'Breastfeeding Support',
+      'Irregular Periods',
+      'Prolapse',
+      'Recurrent Miscarriage',
+      'Uterine Fibroids',
+      'Ovarian Cysts',
+      'Hormonal Imbalance'
+    ]
   },
   {
-    icon: '/herbal_medicine.png',
-    title: 'Herbal Medicine',
-    description: 'Custom herbal formulations to support your wellness journey',
-  },
-  {
-    icon: '/cranio_sacral_therapy.png',
-    title: 'Cranio Sacral Therapy',
-    description: 'Gentle touch therapy to release tension in the central nervous system',
-  },
-  {
-    icon: '/fire_cupping.png',
-    title: 'Fire Cupping',
-    description: 'Ancient technique to improve circulation and reduce muscle tension',
-  },
-  {
-    icon: '/nada_protocol.png',
-    title: 'NADA Protocol',
-    description: 'Ear acupuncture for addiction recovery and stress relief',
-  },
-  {
-    icon: '/battlefield_protocol.png',
-    title: 'Battlefield Protocol',
-    description: 'Specialized treatment for PTSD and trauma recovery',
-  },
-  {
-    icon: '/electro_acupucture.png',
-    title: 'Electro Acupuncture',
-    description: 'Enhanced acupuncture with gentle electrical stimulation',
-  },
-  {
-    icon: '/massage.png',
-    title: 'Medical Tui Na',
-    description: 'Chinese therapeutic massage for musculoskeletal conditions',
-  },
-  {
-    icon: '/massage.png',
-    title: 'Gua Sha',
-    description: 'Traditional scraping technique to promote healing and circulation',
-  },
-  {
-    icon: '/qi_gong.png',
-    title: 'Qi Gong',
-    description: 'Mindful movement and breathing exercises for energy cultivation',
-  },
+    title: 'Mental Health & Related Conditions',
+    image: '/mental_health.png',
+    conditions: [
+      'Depression',
+      'Anxiety',
+      'Stress',
+      'PTSD',
+      'Irritability',
+      'Addiction Management',
+      'Smoking Cessation',
+      'Insomnia',
+      'Sleep Disorders',
+      'Fatigue',
+      'Bipolar Disorder',
+      'Eating Disorders',
+      'Appetite Management',
+      'Mood & Personality Disorders'
+    ]
+  }
 ];
 
 export default function Services() {
+  const router = useRouter();
+
   return (
     <section id="services" className="bg-[#F8F6EF]">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#250303] mb-4 font-['Rufina']">
-            Our Services
+            Conditions Treated
           </h2>
-          <p className="text-xl text-[#250303] max-w-2xl mx-auto">
-            Comprehensive healing treatments tailored to your needs
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => {
-          return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {conditionsData.map((category, index) => (
             <div
               key={index}
-              className="card group cursor-pointer"
+              className="bg-white rounded-2xl p-8 shadow-lg border border-[#250303]/10"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 mb-6 relative group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src={service.icon}
-                    alt={service.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-2xl font-medium mb-3 text-[#250303] font-['Rufina']">
-                  {service.title}
+              <div className="flex flex-col items-center mb-6">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-16 h-16 object-contain mb-4"
+                />
+                <h3 className="text-xl font-bold text-[#250303] font-['Rufina'] text-center">
+                  {category.title}
                 </h3>
-                <p className="text-[#250303] leading-relaxed">
-                  {service.description}
-                </p>
               </div>
+              <ul className="space-y-3">
+                {category.conditions.map((condition, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[#250303]/80"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#4B4D39] mt-2 flex-shrink-0" />
+                    <span className="text-base leading-relaxed">{condition}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          );
-        })}
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => router.push('/conditions')}
+            className="bg-[#4B4D39] text-white px-9 py-3 rounded-lg font-semibold hover:bg-[#3a3d2d] transition-all duration-300"
+          >
+            Learn More
+          </button>
         </div>
       </div>
     </section>

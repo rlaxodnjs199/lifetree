@@ -6,7 +6,7 @@ export default function About() {
           
           {/* Mission & Philosophy */}
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#250303] mb-8 font-['Rufina']">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#250303] mb-12 font-['Rufina']">
               Our Mission & Philosophy
             </h2>
             <p className="text-xl text-[#250303] leading-relaxed">

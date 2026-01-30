@@ -3,6 +3,23 @@ export default function Footer() {
     <footer id="footer" className="bg-[#4B4D39] text-[#FEFBF6] pt-16 pb-8">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {/* Locations Section */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-medium mb-6 uppercase tracking-wider font-['Rufina']">Locations</h3>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="font-semibold mb-1">Burnsville</p>
+                <p>13967 West Preserve Blvd.</p>
+                <p>Burnsville, MN 55337</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">St. Anthony</p>
+                <p>2500 New Brighton Blvd Ste 111</p>
+                <p>St. Anthony, MN 55418</p>
+              </div>
+            </div>
+          </div>
+
           {/* Contact Section */}
           <div className="flex flex-col items-center">
             <h3 className="text-2xl font-medium mb-6 uppercase tracking-wider font-['Rufina']">Get In Touch</h3>
@@ -17,19 +34,6 @@ export default function Footer() {
                   info@lifetreeclinicmn.com
                 </a>
               </div>
-            </div>
-          </div>
-
-          {/* Hours Section */}
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-medium mb-6 uppercase tracking-wider font-['Rufina']">Open</h3>
-            <div className="flex flex-col gap-y-0.5 text-sm">
-               <span>Mon: 10am-6pm</span>
-               <span>Tue: 10am-3pm</span>
-               <span>Wed: 7am-10pm</span>
-               <span>Thu: 10am-6pm</span>
-               <span>Fri: 7am-10am</span>
-               <span>Sat: 8am-11am</span>
             </div>
           </div>
           
