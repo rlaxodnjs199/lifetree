@@ -31,6 +31,7 @@ export default function Navbar() {
     { label: 'Providers', href: '#providers' },
     { label: 'Services', href: '/services' },
     { label: 'Conditions', href: '/conditions' },
+    { label: 'Insurance', href: '/insurance' },
     { label: 'Locations', href: '/locations' },
     { label: 'Contact', href: '#footer' },
   ];
@@ -86,7 +87,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-6">
             {menuItems.map((item) => (
               <button
                 key={item.href}
@@ -101,7 +102,7 @@ export default function Navbar() {
           {/* Reservation Button */}
           <button
             onClick={() => setIsReservationModalOpen(true)}
-            className="hidden lg:block bg-[var(--bg-primary)] text-white px-5 py-2 rounded-lg font-semibold text-md hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
+            className="hidden xl:block bg-[var(--bg-primary)] text-white px-5 py-2 rounded-lg font-semibold text-md hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
           >
             Make Appointment
           </button>
@@ -109,7 +110,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-white p-2"
+            className="xl:hidden text-white p-2"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <List size={28} />}
@@ -118,7 +119,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-4">
+          <div className="xl:hidden mt-4 pb-4 space-y-4">
             {menuItems.map((item) => (
               <button
                 key={item.href}
