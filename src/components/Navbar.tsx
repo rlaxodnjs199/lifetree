@@ -50,6 +50,16 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    if (pathname === '/') {
+      // If on home page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // If on another page, navigate to home
+      router.push('/');
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled || isNotHomePage
@@ -59,17 +69,21 @@ export default function Navbar() {
       <div className="section-container !py-1.5">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <div className="flex items-center justify-center">
-            <img 
-              src="/logo.svg" 
-              alt="LifeTree Clinic Logo" 
+          <button
+            onClick={handleLogoClick}
+            className="flex items-center justify-center hover:opacity-80 transition-opacity duration-300"
+            aria-label="Go to home"
+          >
+            <img
+              src="/logo.svg"
+              alt="LifeTree Clinic Logo"
               className="h-8 w-auto object-contain"
             />
             <div className="ml-3">
               <h1 className="text-lg font-bold text-white">LifeTree Clinic</h1>
               <p className="text-xs text-white/80 -mt-1">Acupuncture & Herbal Medicine</p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-6">
