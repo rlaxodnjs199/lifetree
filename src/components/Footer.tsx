@@ -41,6 +41,12 @@ export default function Footer() {
                   info@lifetreeclinicmn.com
                 </a>
               </div>
+              <button
+                onClick={() => setIsReservationModalOpen(true)}
+                className="bg-[var(--bg-primary)] text-white px-8 py-3 rounded-lg font-bold hover:bg-[var(--bg-primary-dark)] transition-all duration-300 shadow-lg hover:shadow-xl mt-4"
+              >
+                Make Reservation
+              </button>
             </div>
           </div>
           
@@ -51,16 +57,6 @@ export default function Footer() {
              </div>
 
             </div>
-        </div>
-
-        {/* Make Reservation Button */}
-        <div className="text-center mt-10 md:mt-12">
-          <button
-            onClick={() => setIsReservationModalOpen(true)}
-            className="bg-[var(--bg-primary)] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[var(--bg-primary-dark)] transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Make Reservation
-          </button>
         </div>
 
         <div className="text-[#FEFBF6]/60 text-sm text-center w-full pt-8 md:pt-12">
