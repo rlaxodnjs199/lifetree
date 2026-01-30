@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { List, X } from '@phosphor-icons/react';
+import ReservationModal from './ReservationModal';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -84,7 +86,7 @@ export default function Navbar() {
 
           {/* Reservation Button */}
           <button
-            onClick={() => handleNavigation('#footer')}
+            onClick={() => setIsReservationModalOpen(true)}
             className="hidden lg:block bg-[var(--bg-primary)] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
           >
             Make Reservation
@@ -113,7 +115,10 @@ export default function Navbar() {
               </button>
             ))}
             <button
-              onClick={() => handleNavigation('#footer')}
+              onClick={() => {
+                setIsReservationModalOpen(true);
+                setIsMenuOpen(false);
+              }}
               className="btn-primary w-full"
             >
               Make Reservation
@@ -121,6 +126,12 @@ export default function Navbar() {
           </div>
         )}
       </div>
+
+      {/* Reservation Modal */}
+      <ReservationModal
+        isOpen={isReservationModalOpen}
+        onClose={() => setIsReservationModalOpen(false)}
+      />
     </nav>
   );
 }
