@@ -54,6 +54,7 @@ export default function Footer() {
              <div className="flex gap-4">
                 <img src="/award1.png" alt="Award 1" className="h-24 object-contain" />
                 <img src="/award2.jpg" alt="Award 2" className="h-24 object-contain" />
+                <img src="/award3.jpg" alt="Award 3" className="h-24 object-contain" />
              </div>
 
             </div>
