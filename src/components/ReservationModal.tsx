@@ -61,11 +61,15 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
       />
 
       {/* Modal */}
-      <div className={`relative bg-white rounded-2xl shadow-2xl w-full mx-4 p-8 ${selectedLocation ? 'max-w-5xl' : 'max-w-2xl'}`}>
+      <div className={`relative bg-white shadow-2xl w-full transition-all ${
+        selectedLocation
+          ? 'h-full md:h-[95vh] md:max-w-5xl md:mx-4 md:my-4 md:rounded-2xl'
+          : 'max-w-2xl mx-4 rounded-2xl p-8'
+      }`}>
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#250303] hover:text-[#250303]/60 transition-colors z-10"
+          className="absolute top-4 right-4 text-[#250303] hover:text-[#250303]/60 transition-colors z-10 bg-white rounded-full p-1"
           aria-label="Close modal"
         >
           <X size={28} weight="bold" />
@@ -75,11 +79,11 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
         {selectedLocation && (
           <button
             onClick={handleBack}
-            className="absolute top-4 left-4 text-[#250303] hover:text-[#250303]/60 transition-colors z-10 flex items-center gap-2"
+            className="absolute top-4 left-4 text-[#250303] hover:text-[#250303]/60 transition-colors z-10 flex items-center gap-2 bg-white rounded-full px-3 py-1"
             aria-label="Go back"
           >
-            <ArrowLeft size={28} weight="bold" />
-            <span className="font-semibold">Back</span>
+            <ArrowLeft size={24} weight="bold" />
+            <span className="font-semibold hidden md:inline">Back</span>
           </button>
         )}
 
@@ -132,28 +136,28 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
             </p>
           </>
         ) : (
-          <>
+          <div className="h-full flex flex-col">
             {/* Header with selected location */}
-            <div className="text-center mb-6 mt-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#250303] mb-2 font-['Rufina']">
+            <div className="text-center pt-16 pb-4 md:pt-8 md:pb-6 px-4 flex-shrink-0">
+              <h2 className="text-xl md:text-3xl font-bold text-[#250303] mb-2 font-['Rufina']">
                 {selectedLocation.name}
               </h2>
-              <p className="text-[#250303]/70">
+              <p className="text-[#250303]/70 text-sm md:text-base">
                 {selectedLocation.address}, {selectedLocation.city}
               </p>
             </div>
 
-            {/* Reservation iframe */}
-            <div className="w-full">
+            {/* Reservation iframe container */}
+            <div className="flex-1 md:px-6 md:pb-6 overflow-hidden">
               <iframe
                 src={selectedLocation.reservationUrl}
-                className="w-full rounded-lg border-2 border-[#4B4D39]/20"
-                style={{ height: '1000px', overflow: 'hidden' }}
+                className="w-full h-full md:rounded-lg md:border-2 md:border-[#4B4D39]/20"
+                style={{ overflow: 'hidden' }}
                 frameBorder="0"
                 title={`${selectedLocation.name} Reservation`}
               />
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>,
