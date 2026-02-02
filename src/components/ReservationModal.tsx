@@ -138,7 +138,7 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
         ) : (
           <div className="h-full flex flex-col">
             {/* Header with selected location */}
-            <div className="text-center pt-16 pb-4 md:pt-8 md:pb-6 px-4 flex-shrink-0">
+            <div className="text-center pt-5 pb-4 md:pt-8 md:pb-6 px-4 flex-shrink-0">
               <h2 className="text-xl md:text-3xl font-bold text-[#250303] mb-2 font-['Rufina']">
                 {selectedLocation.name}
               </h2>
