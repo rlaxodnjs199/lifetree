@@ -102,9 +102,9 @@ export default function Navbar() {
           {/* Reservation Button */}
           <button
             onClick={() => setIsReservationModalOpen(true)}
-            className="hidden xl:block bg-[var(--bg-primary)] text-white px-5 py-2 rounded-lg font-semibold text-xl hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
+            className="hidden xl:block bg-[var(--bg-primary)] text-white px-6 py-2 rounded-lg font-semibold text-xl hover:bg-[var(--bg-primary-dark)] transition-all duration-300"
           >
-            Book Now
+            Book Online 
           </button>
 
           {/* Mobile Menu Button */}
@@ -136,7 +136,7 @@ export default function Navbar() {
               }}
               className="btn-primary w-full"
             >
-              Book Now
+              Book Online
             </button>
           </div>
         )}
