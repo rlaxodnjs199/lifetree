@@ -12,13 +12,11 @@ const locations = [
     fax: '952-417-6159',
     email: 'info@lifetreeclinicmn.com',
     hours: [
-      { day: 'Monday', time: '10am-6pm' },
-      { day: 'Tuesday', time: '10am-3pm' },
-      { day: 'Wednesday', time: '7am-10am' },
-      { day: 'Thursday', time: '10am-6pm' },
-      { day: 'Friday', time: '7am-10am' },
-      { day: 'Saturday', time: '8am-11am' },
-      { day: 'Sunday', time: 'Closed' },
+      { day: 'Monday', time: '7:30am - 10:30am' },
+      { day: 'Tuesday', time: '7:30am - 5:00pm' },
+      { day: 'Wednesday', time: '7:30am - 10:30am' },
+      { day: 'Thursday', time: '7:30am - 10:30am' },
+      { day: 'Friday', time: '7:30am - 5:00pm' },
     ],
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.8!2d-93.3056!3d44.7586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f62a8c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2s13967%20W%20Preserve%20Blvd%2C%20Burnsville%2C%20MN%2055337!5e0!3m2!1sen!2sus!4v1234567890',
   },
@@ -30,8 +28,8 @@ const locations = [
     fax: '952-417-6159',
     email: 'info@lifetreeclinicmn.com',
     hours: [
-      { day: 'Monday - Friday', time: '10:00am - 5:00pm' },
-      { day: 'Saturday - Sunday', time: 'Closed' },
+      { day: 'Monday', time: '10:00am - 2:00pm' },
+      { day: 'Wednesday', time: '10:00am - 2:00pm' },
     ],
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2821.2!2d-93.2445!3d45.0158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32d8c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2s2500%20New%20Brighton%20Blvd%20%23111%2C%20St%20Anthony%2C%20MN%2055418!5e0!3m2!1sen!2sus!4v1234567890',
   },
@@ -108,8 +106,8 @@ export default function LocationsPage() {
                       <p className="font-semibold text-[#250303] mb-2">Hours</p>
                       <div className="space-y-1">
                         {location.hours.map((hour, idx) => (
-                          <div key={idx} className="flex justify-between text-[#250303] text-sm">
-                            <span className="font-medium min-w-[100px]">{hour.day}:</span>
+                          <div key={idx} className="flex text-[#250303] text-sm">
+                            <span className="font-medium w-[120px] flex-shrink-0">{hour.day}:</span>
                             <span>{hour.time}</span>
                           </div>
                         ))}

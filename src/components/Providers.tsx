@@ -3,35 +3,25 @@ import { CheckCircleIcon } from '@phosphor-icons/react';
 const providers = [
   {
     name: 'Dr. Kyu Hong Tae',
-    title: 'DAOM, Dipl.Ac., L.Ac.',
+    title: 'Acupuncturist, L.Ac., DAOM',
     image: '/kyu.jpg',
     description: [
-      "Dr. Kyu Hong Tae is a licensed Doctor of Acupuncture and Oriental Medicine with advanced clinical training in Korean Medicine and Juheng Acupuncture.",
-      "He accepts auto accident, personal injury, and workers' compensation cases, and provides comprehensive, patient-centered care focused on both recovery and long-term wellness."
+      "Kyu Hong Tae, founder and owner of Lifetree Clinic, specializes in pain management and mental health through compassion-centered acupuncture care, and has participated in international acupuncture medical missions, bringing a global and compassionate perspective to healing."
     ],
-    expertise: [
-      {
-        title: "Pain Management",
-        items: ["Chronic pain, acute injuries, post-accident rehabilitation"]
-      },
-      {
-        title: "Mental & Emotional Health",
-        items: ["Stress, anxiety, sleep disorders, and mood balance"]
-      },
-      {
-        title: "General Wellness & Preventive Care",
-        items: ["Immune support, fatigue, digestive health, and overall vitality"]
-      },
-      {
-        title: "Juheng Acupuncture & Korean Medicine",
-        items: ["Specialized techniques for musculoskeletal and neurological conditions"]
-      }
+    education: [
+      "Doctor of Acupuncture and Oriental Medicine (D.A.O.M.) – American Academy of Acupuncture and Oriental Medicine, Roseville, Minnesota",
+      "Master of Acupuncture and Oriental Medicine (M.A.O.M.) – American Academy of Acupuncture and Oriental Medicine, Roseville, Minnesota",
+      "Licensed Acupuncturist – Minnesota Board of Medical Practice",
+      "National Board Certified in Acupuncture – NCBAHM (National Certification Board for Acupuncture and Herbal Medicine)"
     ],
-    credentials: [
-      "Doctorate & Master's Degrees in Acupuncture and Oriental Medicine — American Academy of Acupuncture and Oriental Medicine (Roseville, Minnesota)",
-      "Licensed Acupuncturist — Minnesota Board of Medical Practice",
-      "National Board Certified — NCBAHM (National Certification Board for Acupuncture and Herbal Medicine)",
-      "Certified Practitioner — Institute of Juheng Acupuncture and Moxibustion (Seoul, South Korea)"
+    trainings: [
+      "Juheng Acupuncture & Moxibustion – Institute of Juheng Acupuncture and Moxibustion, Seoul, South Korea",
+      "Korean Medicine–Based Pain Management Techniques",
+      "Integrative Treatment for Musculoskeletal and Neurological Disorders"
+    ],
+    memberships: [
+      "Member, American Society of Acupuncturists (ASA)",
+      "Member, Minnesota Acupuncture Association (MAA)"
     ]
   },
   {
@@ -102,47 +92,7 @@ export default function Providers() {
                   ))}
                 </div>
 
-                {/* Areas of Expertise (Kyu) */}
-                {provider.expertise && (
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-[#FEFBF6]/20">
-                      <h4 className="text-xl font-bold text-[#FEFBF6] mb-6">
-                        Areas of Expertise
-                      </h4>
-                      <div className="space-y-5">
-                        {provider.expertise.map((area, i) => (
-                          <div key={i}>
-                            <h5 className="text-lg font-semibold text-[#FEFBF6] mb-2">
-                              {area.title}
-                            </h5>
-                            {area.items.map((item, j) => (
-                              <p key={j} className="text-[#FEFBF6]/80 ml-4">
-                                {item}
-                              </p>
-                            ))}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                )}
-
-                {/* Professional Credentials Section (Kyu) */}
-                {provider.credentials && (
-                    <div className="border border-[#FEFBF6]/30 rounded-xl p-8 mb-8">
-                      <h4 className="text-xl font-bold text-[#FEFBF6] mb-6 m-0">
-                        Professional Credentials
-                      </h4>
-                      <ul className="space-y-4 m-0 p-0 list-none">
-                        {provider.credentials.map((cred, i) => (
-                          <li key={i} className="flex items-start gap-3 text-[#FEFBF6]/90">
-                            <div className="w-2 h-2 rounded-full bg-[#FEFBF6] mt-2.5 flex-shrink-0" />
-                            <span>{cred}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                )}
-
-                {/* Education Section (Ariel) */}
+                {/* Education & Licensure */}
                 {provider.education && (
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-[#FEFBF6]/20">
                       <h4 className="text-xl font-bold text-[#FEFBF6] mb-6">
@@ -159,17 +109,34 @@ export default function Providers() {
                     </div>
                 )}
                 
-                {/* Advanced Trainings (Ariel) */}
+                {/* Advanced Trainings */}
                 {provider.trainings && (
-                    <div className="border border-[#FEFBF6]/30 rounded-xl p-8">
+                    <div className="border border-[#FEFBF6]/30 rounded-xl p-8 mb-8">
                        <h4 className="text-xl font-bold text-[#FEFBF6] mb-6 m-0">
-                          Advanced Trainings
+                          Advanced Training
                         </h4>
                       <ul className="space-y-4 m-0 p-0 list-none">
                         {provider.trainings.map((train, i) => (
                           <li key={i} className="flex items-start gap-3 text-[#FEFBF6]/90">
                             <div className="w-2 h-2 rounded-full bg-[#FEFBF6] mt-2.5 flex-shrink-0" />
                             <span>{train}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                )}
+
+                {/* Professional Memberships */}
+                {provider.memberships && (
+                    <div className="border border-[#FEFBF6]/30 rounded-xl p-8">
+                      <h4 className="text-xl font-bold text-[#FEFBF6] mb-6 m-0">
+                        Professional Memberships
+                      </h4>
+                      <ul className="space-y-4 m-0 p-0 list-none">
+                        {provider.memberships.map((membership, i) => (
+                          <li key={i} className="flex items-start gap-3 text-[#FEFBF6]/90">
+                            <div className="w-2 h-2 rounded-full bg-[#FEFBF6] mt-2.5 flex-shrink-0" />
+                            <span>{membership}</span>
                           </li>
                         ))}
                       </ul>
